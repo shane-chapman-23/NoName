@@ -25,13 +25,18 @@ public class PlayerState
     public virtual void Enter()
     {
         DoChecks();
+        //setting the states animBoolname to true on enter
+        player.Anim.SetBool(animBoolName, true);
         //setting start time of state
         startTime = Time.time;
+
+        Debug.Log(animBoolName);
     }
     //called on state exit
     public virtual void Exit()
     {
-
+       //setting the states animBoolname to false on exit
+        player.Anim.SetBool(animBoolName, false);
     }
     //called every frame
     public virtual void LogicUpdate()
